@@ -37,4 +37,3 @@ Feature: Simple examples about Scenario Outline
       | storemanager85 | John      | Doe      |
 
 
-

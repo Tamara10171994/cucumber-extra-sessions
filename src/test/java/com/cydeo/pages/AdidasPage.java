@@ -13,8 +13,8 @@ import org.openqa.selenium.support.PageFactory;
 import java.util.List;
 
 public class AdidasPage {
-    public AdidasPage(){
-        PageFactory.initElements(Driver.getDriver(),this);
+    public AdidasPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
     }
 
     @FindBy(xpath = "//h3[@class='price-container']")
@@ -63,8 +63,7 @@ public class AdidasPage {
     public List<WebElement> products;
 
 
-
-    public void clickCategory(String category){
+    public void clickCategory(String category) {
 
         Driver.getDriver().findElement(By.xpath("//a[.='" + category + "']")).click();
         BrowserUtils.waitFor(2);
@@ -72,7 +71,7 @@ public class AdidasPage {
     }
 
 
-    public String getProductPrice(String product){
+    public String getProductPrice(String product) {
 
 
         String actualPrice = Driver.getDriver().findElement(By.xpath("//a[normalize-space(.)='" + product + "']/../../h5")).getText();
@@ -81,10 +80,5 @@ public class AdidasPage {
         return actualPrice.substring(1);
 
 
-
     }
-
-
-
-
 }

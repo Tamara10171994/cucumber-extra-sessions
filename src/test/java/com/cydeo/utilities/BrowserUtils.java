@@ -12,12 +12,12 @@ import java.util.stream.Collectors;
 public class BrowserUtils {
 
 
-
     /**
      * A method to pause the thread certain seconds
+     *
      * @param seconds
      */
-    public static void waitFor(int seconds){
+    public static void waitFor(int seconds) {
 
         try {
             Thread.sleep(seconds * 1000);
@@ -31,10 +31,10 @@ public class BrowserUtils {
     public static List<String> getElementsText(List<WebElement> elements) {
 
 
-        List<String> elementsText=new ArrayList<>();
+        List<String> elementsText = new ArrayList<>();
 
         for (WebElement element : elements) {
-            elementsText.add( element.getText());
+            elementsText.add(element.getText());
         }
 
         return elementsText;
@@ -43,7 +43,7 @@ public class BrowserUtils {
 
     public static List<String> getElementsTextWithStream(List<WebElement> elements) {
 
-        return elements.stream().map(x->x.getText()).collect(Collectors.toList());
+        return elements.stream().map(x -> x.getText()).collect(Collectors.toList());
     }
 
     /**
@@ -61,7 +61,6 @@ public class BrowserUtils {
 
     /**
      * Waits for alertIsPresent
-     *
      */
     public static void waitForAlertIsPresent(int timeout) {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), timeout);
@@ -87,7 +86,5 @@ public class BrowserUtils {
     public static void scrollToElement(WebElement element) {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
     }
-
 }
-
 

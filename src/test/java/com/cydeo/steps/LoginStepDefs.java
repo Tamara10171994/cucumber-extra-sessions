@@ -43,7 +43,7 @@ public class LoginStepDefs {
         String username = ConfigurationReader.getProperty("sales_manager_username");
         String password = ConfigurationReader.getProperty("sales_manager_password");
 
-     loginPage.login(username,password);
+        loginPage.login(username,password);
 
 
 
